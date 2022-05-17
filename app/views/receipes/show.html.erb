@@ -1,0 +1,5 @@
+<h1> Recipe <%= @receipe.Name %> </h1>
+
+<p><%= @receipe.PreparationTime %></p>
+<p><%= @receipe.CookingTime %></p>
+<p><%= "Private" unless  @receipe.Public %> <%= "Public" if @receipe.Public %></p>

@@ -1,0 +1,16 @@
+<h1>Recipes List</h1>
+
+<table>
+    <% @receipes.each do |receipe| %>
+        <tr>
+            <td><%= link_to receipe.Name, receipe %></td>
+            <td><%= receipe.PreparationTime %></td>
+            <td><%= receipe.CookingTime %></td>
+            <td><%= "Private" unless  receipe.Public %> <%= "Public" if receipe.Public %></td>
+            <td>
+                <%= link_to "Show", receipe %>
+                <%= button_to "DELETE" , receipe_path(receipe.id), method: :delete, confirm: "Are you sure?" %>
+            </td>
+        </tr>
+    <% end %>
+</ul>
