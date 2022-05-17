@@ -1,0 +1,14 @@
+<h1> New Recipe food </h1>
+
+<%= form_for @receipe_food do |f| %>
+    <%= f.label :Name %>
+    <%= f.text_field :Name %>
+    <br />
+    <%= f.label :Quantity %>
+    <%= f.text_field :Quantity %>
+    <br />
+    <%= f.label :Unit %>
+    <%= f.text_field :Unit %>
+    <br />
+    <%= f.submit %>
+<% end %>
