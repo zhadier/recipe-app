@@ -3,6 +3,7 @@
 <div>
   <%= link_to "Back to foods", foods_path %>
 
-  <%= button_to "Destroy this food", @food, method: :delete %>
-
+  <% if @food.user_id == current_user.id %>
+    <%= button_to "Delete", @food, method: :delete, confirm: "Are you sure?", disable_with: "Processing...", class:"food-buttons" %>
+  <% end %>
 </div>
