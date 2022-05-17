@@ -5,6 +5,8 @@ ruby '3.1.1'
 
 gem 'ffi'
 
+gem 'jquery-rails'
+
 # Fontawesome
 gem 'font-awesome-rails'
 

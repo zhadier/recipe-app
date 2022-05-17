@@ -1,0 +1,37 @@
+<section id="foods-section">
+  <%= link_to "Add Food", new_food_path, method: :get,class:"new-food_link" %>
+  <table class="foods-table">
+    <tr class="foods-table_head">
+      <th class="food-head_item"><div class="arrow-head"><h3>Food</h3>
+        <div class="arrow-icons">
+          <i class="fa fa-arrow-up"></i>
+          <i class="fa fa-arrow-down"></i>
+        </div>
+        </div>
+      </th>
+      <th class="food-head_item"><h3>Measurement_unit</h3>
+      </th>
+      <th class="food-head_item"><h3>Unit_Price</h3>
+      </th>
+      <th class="food-head_item"><h3>Actions</h3>
+      </th>
+    </tr>
+    <% @foods.each do |food| %>
+      <tr class="foods-table_row">
+        <td class="food-row_item"><h3><%= food.name %><%= food.user_id %></h3></td>
+        <td class="food-row_item"><h3><%= food.measurement_unit %></h3></td>
+        <td class="food-row_item"><h3>$
+            <%= food.price %></h3></td>
+        <td class="food-row_item">
+        <div class="food-buttons_container">
+        <%= button_to "Show", food, method: :get, class:"food-buttons" %>
+        <% if food.user_id == current_user.id %>
+          <%= button_to "Delete", food_path(food.id), method: :delete, confirm: "Are you sure?", disable_with: "Processing...", class:"food-buttons" %>
+       <% end %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+
+  </div>
+</section>

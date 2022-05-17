@@ -14,8 +14,29 @@
  *= require_self
  */
 
-.flash {
-  display: flex;
+/*
+ *= require font-awesome
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+
+#flash_error {
+  color: red;
+}
+
+#flash_notice {
+  color: green;
+}
+
+#flash_alert {
+  color: yellow;
 }
 
 .devise-form {
@@ -67,4 +88,79 @@
   width: auto;
   padding: 0;
   height: auto;
+}
+
+/* ### Foods Section ### */
+#foods-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 10%;
+  gap: 50px;
+}
+
+.new-food_link {
+  justify-self: flex-end;
+  align-self: end;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  box-shadow: 3px 3px;
+  border: 2px solid;
+}
+
+.foods-table {
+  border: 2px solid;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.foods-table_head {
+  background-color: rgb(170, 167, 167);
+}
+
+.foods-table_row:nth-child(even) {
+  background-color: rgb(219, 218, 218);
+}
+
+.food-head_item,
+.food-row_item {
+  text-align: left;
+  border-right: 2px solid;
+  padding: 10px;
+}
+
+.food-row_item h3 {
+  font-weight: 400;
+  display: flex;
+}
+
+.arrow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.arrow-icons i {
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.food-buttons_container {
+  display: flex;
+  gap: 10px;
+}
+
+.food-buttons {
+  border: none;
+  background: none;
+  color: navy;
+  cursor: pointer;
 }
