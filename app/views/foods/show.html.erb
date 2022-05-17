@@ -1,0 +1,9 @@
+<%= render @food %>
+
+<div>
+  <%= link_to "Back to foods", foods_path %>
+
+  <% if @food.user_id == current_user.id %>
+    <%= button_to "Delete", @food, method: :delete, confirm: "Are you sure?", disable_with: "Processing...", class:"food-buttons" %>
+  <% end %>
+</div>
