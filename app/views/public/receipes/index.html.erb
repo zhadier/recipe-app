@@ -1,0 +1,19 @@
+<section id="public-recipes">
+  <h1 class="public-recipe_heading">Public Recipes</h1>
+  <% @receipes.each do |receipe| %>
+    <div class="public-recipe_item">
+      <div class="public-recipe_title">
+        <h3><%= receipe.Name %></h3>
+        <p>by
+          <%= receipe.user.name %></p>
+      </div>
+      <div class="public-recipe_desc">
+        <p>Total food items:
+          <%= receipe.total_food_items %></p>
+        <p>Total price:
+          <%= receipe.total_price %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+</section>
