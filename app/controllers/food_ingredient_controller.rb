@@ -1,8 +1,8 @@
 class FoodIngredientController < ApplicationController
   def new
-    @ingredientsFoodId = Receipe.find(params[:receipe_id]).food_ingredients.pluck(:food_id)
+    @ingredients_food_id = Receipe.find(params[:receipe_id]).food_ingredients.pluck(:food_id)
     @food_ingredient = FoodIngredient.new
-    @foods = Food.where.not(id: @ingredientsFoodId)
+    @foods = Food.where.not(id: @ingredients_food_id)
   end
 
   def create
@@ -26,4 +26,3 @@ class FoodIngredientController < ApplicationController
     params.require(:food_ingredient).permit(:food_id, :Quantity)
   end
 end
-

@@ -3,6 +3,6 @@ class Receipe < ApplicationRecord
   has_many :food_ingredients, dependent: :delete_all
 
   def food_ingredients
-    FoodIngredient.where(receipe_id: self.id)
+    FoodIngredient.where(receipe_id: id)
   end
 end
