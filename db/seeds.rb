@@ -10,3 +10,9 @@ user2 = User.create(name: 'Aime', email: 'aime@gmail.com', password: '123456')
 
 foods = %w[Rice Apple Tomato Onions Cumin Turmeric Chicken Beef]
 foods.each { |food| Food.create(name: food, price: rand(1..1000), user_id: rand(1..2)) }
+
+recipes = %w[Biryani Kebab Burger Pizza Spaghetti Shawarma Taco Manchurian]
+recipes.each do |recipe|
+  Receipe.create(Name: recipe, PreparationTime: rand(1..20), CookingTime: rand(1..10), Public: rand(0..1),
+                 user_id: rand(1..2))
+end
