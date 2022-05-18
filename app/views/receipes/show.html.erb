@@ -1,22 +1,73 @@
-<h1> Recipe <%= @receipe.Name %> </h1>
-<p> <%= @receipe.Description %> </p>
-<p><%= @receipe.PreparationTime %></p>
-<p><%= @receipe.CookingTime %></p>
-<p><%= "Private" unless  @receipe.Public %> <%= "Public" if @receipe.Public %></p>
+<div id="recipe-details_section">
+  <h1>
+    <%= @receipe.Name %>
+  </h1>
+  <div class="recipe-details_headline">
+    <div class="recipe-details_desc">
+      <p><strong>Preparation Time:
+        </strong>
+        <%= @receipe.PreparationTime %>
+        hours</p>
+      <p><strong>Cooking Time:
+        </strong>
+        <%= @receipe.CookingTime %>
+        hours</p>
+      <p><strong>
+          Steps go here ...</strong></p>
+    </div>
+    <div class="recipe-details_public">
+      <p><strong><%= "Private" unless  @receipe.Public %>
+          <%= "Public" if @receipe.Public %></strong></p>
+    </div>
+  </div>
+  <% if @receipe.user_id == current_user.id %>
+    <div class="recipe-details_links">
+      <%= link_to "Generate Shopping List", receipe_food_ingredient_index_path(receipe_id:@receipe.id), method: :get,class:"new-food_link" %>
+      <%= form_with(model: FoodIngredient.new, url: receipe_food_ingredient_index_url(receipe_id:@receipe.id), class:"recipe-form") do |f| %>
+        <div class="recipe-form_input">
+          <%= f.label :food_id, "Food" %>
+          <%= f.select :food_id, @missing_foods.map { |food| [food.name, food.id] } %>
+        </div>
+        <div class="recipe-form_input">
+          <%= f.label :Quantity %>
+          <%= f.number_field :Quantity %>
+        </div>
+        <%= f.submit "Add Ingredient", class:"new-food_link" %>
+      <% end %>
+    </div>
 
-<table>
-    <tr>
-        <td>Name</td>
-        <td>Quantity</td>
-        <td>Action</td>
+  <% end %>
+
+ <table class="foods-table">
+    <tr class="foods-table_head">
+      <th class="food-head_item"><div class="arrow-head"><h3>Food</h3>
+        <div class="arrow-icons">
+          <i class="fa fa-arrow-up"></i>
+          <i class="fa fa-arrow-down"></i>
+        </div>
+        </div>
+      </th>
+      <th class="food-head_item"><h3>Quantity</h3>
+      </th>
+      <th class="food-head_item"><h3>Value</h3>
+      </th>
+      <th class="food-head_item"><h3>Actions</h3>
+      </th>
     </tr>
-    <% @receipe.food_ingredients.each do |food_ingredient| %>
-        <tr>
-            <td><%= food_ingredient.food_name %></td>
-            <td><%= food_ingredient.Quantity %></td>
-            <td>
-                <%= button_to 'Delete', receipe_food_ingredient_path(@receipe, food_ingredient), method: :delete, data: { confirm: 'Are you sure?' } %>
-            </td>
-        </tr>
+    <% @receipe_foods.each do |receipe_food| %>
+      <tr class="foods-table_row">
+        <td class="food-row_item"><h3><%= receipe_food.food.name %></h3></td>
+        <td class="food-row_item"><h3><%= receipe_food.Quantity %> <%= receipe_food.food.measurement_unit %></h3></td>
+        <td class="food-row_item"><h3>$
+            <%= receipe_food.food.price * receipe_food.Quantity %></h3></td>
+        <td class="food-row_item">
+        <div class="food-buttons_container">
+        <% if @receipe.user_id == current_user.id %>
+          <%= button_to "Remove", receipe_food_ingredient_path(receipe_id:@receipe.id, id:receipe_food.id), method: :delete, confirm: "Are you sure?", disable_with: "Processing...", class:"food-buttons" %>
+       <% end %>
+          </div>
+        </td>
+      </tr>
     <% end %>
-</table>
+
+</div>

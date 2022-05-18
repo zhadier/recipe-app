@@ -12,8 +12,7 @@ Rails.application.routes.draw do
     end
 
     namespace :public do
-      resources :receipes, only: %i[index show new create destroy] do
-        resources :food_ingredient, only: %i[new create destroy]
+      resources :receipes, only: %i[index show] do
       end
     end
   end

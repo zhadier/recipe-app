@@ -14,5 +14,5 @@ foods.each { |food| Food.create(name: food, price: rand(1..1000), user_id: rand(
 recipes = %w[Biryani Kebab Burger Pizza Spaghetti Shawarma Taco Manchurian]
 recipes.each do |recipe|
   Receipe.create(Name: recipe, PreparationTime: rand(1..20), CookingTime: rand(1..10), Public: rand(0..1),
-                 user_id: rand(1..2))
+                 user_id: rand(1..2), Description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua')
 end

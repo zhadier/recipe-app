@@ -264,3 +264,54 @@ h4 {
   gap: 10px;
   flex-basis: 150px;
 }
+
+/* ### Recipe Details ### */
+#recipe-details_section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.recipe-details_headline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-details_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recipe-details_links {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.recipe-form_input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.recipe-form_input input {
+  width: 60px;
+}
+
+.food-ingredient_button {
+  background-color: white;
+  padding: 5px;
+  font-size: 0.7rem;
+}
