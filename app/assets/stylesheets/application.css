@@ -315,3 +315,18 @@ h4 {
   padding: 5px;
   font-size: 0.7rem;
 }
+
+/* ### Shopping-list ### */
+#shopping-list_section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.shopping-list_headline {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
