@@ -10,9 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_17_180613) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_18_161240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "food_ingredients", force: :cascade do |t|
+    t.integer "Quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
@@ -22,16 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_180613) do
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_foods_on_user_id"
-  end
-
-  create_table "receipe_foods", force: :cascade do |t|
-    t.integer "Quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "receipe_id", null: false
-    t.bigint "food_id", null: false
-    t.index ["food_id"], name: "index_receipe_foods_on_food_id"
-    t.index ["receipe_id"], name: "index_receipe_foods_on_receipe_id"
   end
 
   create_table "receipes", force: :cascade do |t|
@@ -59,7 +55,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_180613) do
   end
 
   add_foreign_key "foods", "users"
-  add_foreign_key "receipe_foods", "foods"
-  add_foreign_key "receipe_foods", "receipes"
   add_foreign_key "receipes", "users"
 end

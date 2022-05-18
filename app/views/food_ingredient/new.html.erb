@@ -1,0 +1,9 @@
+<h1>New Ingredient</h1>
+
+<%= form_for(@food_ingredient) do |f| %>
+  <%= f.label :food_id , "Food" %>
+  <%= f.text_field :food_id %>
+  <%= f.label :Quantity %>
+  <%= f.text_field :Quantity %>
+  <%= f.submit %>
+<% end %>
