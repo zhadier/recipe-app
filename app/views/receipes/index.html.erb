@@ -4,6 +4,7 @@
     <% @receipes.each do |receipe| %>
         <tr>
             <td><%= link_to receipe.Name, receipe %></td>
+            <td><%= receipe.Description %></td>
             <td><%= receipe.PreparationTime %></td>
             <td><%= receipe.CookingTime %></td>
             <td><%= "Private" unless  receipe.Public %> <%= "Public" if receipe.Public %></td>
