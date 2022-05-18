@@ -29,6 +29,6 @@ class ReceipesController < ApplicationController
   private
 
   def receipe_params
-    params.require(:receipe).permit(:Name, :PreparationTime, :CookingTime, :Public)
+    params.require(:receipe).permit(:Name, :Description, :PreparationTime, :CookingTime, :Public)
   end
 end

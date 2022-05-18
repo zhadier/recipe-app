@@ -4,17 +4,19 @@ Rails.application.routes.draw do
 
   devise_scope :user do
     get '/users/sign_out', to: 'devise/sessions#destroy'
-  end
 
-  root 'foods#index'
-  resources :foods, only: %i[index show new create destroy]
-  resources :receipes, only: %i[index show new create destroy] do
-    resources :receipe_food, only: %i[new create destroy]
-  end
-
-  namespace :public do
+    root 'foods#index'
+    resources :foods, only: %i[index show new create destroy]
     resources :receipes, only: %i[index show new create destroy] do
-      resources :receipe_food, only: %i[new create destroy]
+      resources :food_ingredient, only: %i[new create destroy]
+    end
+
+    namespace :public do
+      resources :receipes, only: %i[index show new create destroy] do
+        resources :food_ingredient, only: %i[new create destroy]
+      end
     end
   end
+  # Defines the root path route ("/")
+  # root "articles#index"
 end

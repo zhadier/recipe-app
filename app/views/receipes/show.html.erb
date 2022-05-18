@@ -1,5 +1,22 @@
 <h1> Recipe <%= @receipe.Name %> </h1>
-
+<p> <%= @receipe.Description %> </p>
 <p><%= @receipe.PreparationTime %></p>
 <p><%= @receipe.CookingTime %></p>
 <p><%= "Private" unless  @receipe.Public %> <%= "Public" if @receipe.Public %></p>
+
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Quantity</td>
+        <td>Action</td>
+    </tr>
+    <% @receipe.food_ingredients.each do |food_ingredient| %>
+        <tr>
+            <td><%= food_ingredient.food_name %></td>
+            <td><%= food_ingredient.Quantity %></td>
+            <td>
+                <%= button_to 'Delete', receipe_food_ingredient_path(@receipe, food_ingredient), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+        </tr>
+    <% end %>
+</table>
