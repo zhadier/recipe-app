@@ -1,4 +1,5 @@
 <section id="foods-section">
+<h1 class="foods-section__title">Foods</h1>
   <%= link_to "Add Food", new_food_path, method: :get,class:"new-food_link" %>
   <table class="foods-table">
     <tr class="foods-table_head">
@@ -18,7 +19,7 @@
     </tr>
     <% @foods.each do |food| %>
       <tr class="foods-table_row">
-        <td class="food-row_item"><h3><%= food.name %><%= food.user_id %></h3></td>
+        <td class="food-row_item"><h3><%= food.name %></h3></td>
         <td class="food-row_item"><h3><%= food.measurement_unit %></h3></td>
         <td class="food-row_item"><h3>$
             <%= food.price %></h3></td>
