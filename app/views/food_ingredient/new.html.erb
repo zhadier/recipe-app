@@ -1,9 +1,22 @@
-<h1>New Ingredient</h1>
+<h1> New Recipe food </h1>
 
-<%= form_for(@food_ingredient) do |f| %>
-  <%= f.label :food_id , "Food" %>
-  <%= f.text_field :food_id %>
-  <%= f.label :Quantity %>
-  <%= f.text_field :Quantity %>
-  <%= f.submit %>
+<%= form_with(model: @food_ingredient, url: receipe_food_ingredient_index_url) do |f| %>
+    <% if @food_ingredient.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@food_ingredient.errors.count, "error") %>
+        prohibited this food from being saved:</h2>
+
+      <ul>
+        <% @food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.label :food_id, "Food" %>
+    <%= f.select :food_id, @foods.map { |food| [food.name, food.id] } %>
+    <%= f.label :Quantity %>
+    <%= f.number_field :Quantity %>
+    <%= f.submit %>
 <% end %>
+
