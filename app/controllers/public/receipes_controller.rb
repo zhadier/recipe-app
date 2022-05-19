@@ -1,6 +1,6 @@
 class Public::ReceipesController < ApplicationController
   def index
-    @receipes = Receipe.where(Public: true).order(created_at: :desc).includes(:user, :food)
+    @receipes = Receipe.where(Public: true).order(created_at: :desc).includes(:user)
   end
 
   def show
