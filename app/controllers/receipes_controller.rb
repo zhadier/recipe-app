@@ -4,7 +4,7 @@ class ReceipesController < ApplicationController
   end
 
   def show
-    @receipe = Receipe.find_by(id: params[:id])
+    @receipe = Receipe.find_by(id: params[:id]).
     @receipe_foods = @receipe.food_ingredients.includes(:food)
     @missing_foods = Food.where.not(id: @receipe_foods.pluck(:food_id))
   end

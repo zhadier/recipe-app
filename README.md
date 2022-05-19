@@ -68,6 +68,11 @@ To perform tests, run the following command
 - GitHub: [@zhadier](https://github.com/zhadier)
 - LinkedIn: [Zeeshan Haider](https://www.linkedin.com/in/zhadier39/)
 
+👤 **Aime Malaika**
+
+- GitHub: [@aimemalaika](https://github.com/aimemalaika)
+- LinkedIn: [Aime Malaika](https://www.linkedin.com/in/aimemalaika/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome and highly encouraged!
