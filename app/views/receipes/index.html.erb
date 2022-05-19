@@ -1,17 +1,51 @@
-<h1>Recipes List</h1>
-
-<table>
-    <% @receipes.each do |receipe| %>
-        <tr>
-            <td><%= link_to receipe.Name, receipe %></td>
-            <td><%= receipe.Description %></td>
-            <td><%= receipe.PreparationTime %></td>
-            <td><%= receipe.CookingTime %></td>
-            <td><%= "Private" unless  receipe.Public %> <%= "Public" if receipe.Public %></td>
-            <td>
-                <%= link_to "Show", receipe %>
-                <%= button_to "DELETE" , receipe_path(receipe.id), method: :delete, confirm: "Are you sure?" %>
-            </td>
+<header>
+  <ul>
+    <li><a href="/">Food</a></li>
+    <li><a href="/receipes">Receipe</a></li>
+    <li><a href="/public/receipes">Public Receipes</a></li>
+  </ul>
+</header>
+<section id="foods-section">
+    <h1 class="foods-section__title">Recipes List</h1>
+    <table class="foods-table">
+        <tr class="foods-table_head">
+            <th class="food-head_item">
+                <div class="arrow-head">
+                    <h3>Receipe</h3>
+                    <div class="arrow-icons">
+                    <i class="fa fa-arrow-up"></i>
+                    <i class="fa fa-arrow-down"></i>
+                    </div>
+                </div>
+            </th>
+            <th class="food-head_item">
+                <h3>Description</h3>
+            </th>
+            <th class="food-head_item">
+                <h3>Preparation Time</h3>
+            </th>
+            <th class="food-head_item">
+                <h3>Cooking Time</h3>
+            </th>
+            <th class="food-head_item">
+                <h3>Visibility</h3>
+            </th>
+            <th class="food-head_item">
+                <h3>Action</h3>
+            </th>
         </tr>
-    <% end %>
-</ul>
+        <% @receipes.each do |receipe| %>
+            <tr class="foods-table_row">
+                <td class="food-row_item"><%= link_to receipe.Name, receipe %></td>
+                <td class="food-row_item"><%= receipe.Description %></td>
+                <td class="food-row_item"><%= receipe.PreparationTime %></td>
+                <td class="food-row_item"><%= receipe.CookingTime %></td>
+                <td class="food-row_item"><%= "Private" unless  receipe.Public %> <%= "Public" if receipe.Public %></td>
+                <td class="food-row_item flex-align">
+                    <%= link_to "Show", receipe %>
+                    <%= button_to "DELETE" , receipe_path(receipe.id), method: :delete, confirm: "Are you sure?" %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+</section>
