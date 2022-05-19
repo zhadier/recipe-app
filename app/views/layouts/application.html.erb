@@ -11,6 +11,16 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+      <header>
+        <ul>
+          <li><a href="/">Food</a></li>
+          <li><a href="/receipes">Receipe</a></li>
+          <li><a href="/public/receipes">Public Receipes</a></li>
+          <li><a href="/users/sign_out">Sign Out</a></li>
+        </ul>
+      </header>
+    <% end %>
     <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
     <%= content_tag(:div, flash[:notice], :id => "flash_notice") if flash[:notice] %>
     <%= content_tag(:div, flash[:alert], :id => "flash_alert") if flash[:alert] %>
