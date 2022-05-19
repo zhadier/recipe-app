@@ -1,16 +1,20 @@
-<div id="<%= dom_id food %>">
-  <p>
-    <strong>Name:</strong>
-    <%= food.name %>
+<div class="food-details_item">
+  <p class="food-details_text">
+    <strong>Name:
+    </strong>
+    <%= food.name.capitalize %>
   </p>
 
-  <p>
-    <strong>Measurement unit:</strong>
-    <%= food.measurement_unit %>
+  <p class="food-details_text">
+    <strong>Measurement unit:
+    </strong>
+    <%= food.measurement_unit.capitalize %>
   </p>
 
-  <p>
-    <strong>Price:</strong>
+  <p class="food-details_text">
+    <strong>Price:
+    </strong>
+    $
     <%= food.price %>
   </p>
 

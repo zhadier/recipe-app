@@ -1,9 +1,12 @@
-<%= render @food %>
+<div id="food-details">
+  <h1 class="food-details_heading">Food Details</h1>
+  <%= render @food %>
 
-<div>
-  <%= link_to "Back to foods", foods_path %>
+  <div>
+    <%= link_to "Back to foods", foods_path, class:"food-details_button" %>
 
-  <% if @food.user_id == current_user.id %>
-    <%= button_to "Delete", @food, method: :delete, confirm: "Are you sure?", disable_with: "Processing...", class:"food-buttons" %>
-  <% end %>
+    <% if @food.user_id == current_user.id %>
+      <%= button_to "Delete", @food, method: :delete, confirm: "Are you sure?", disable_with: "Processing...", class:"food-details_button" %>
+    <% end %>
+  </div>
 </div>

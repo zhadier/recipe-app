@@ -17,6 +17,7 @@
 /*
  *= require font-awesome
 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Raleway:wght@100;300;400;500&family=Roboto+Slab:wght@100;300;500;700&display=swap');
 
 * {
   margin: 0;
@@ -25,6 +26,14 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Open Sans', sans-serif;
 }
 
 #flash_error {
@@ -100,6 +109,10 @@
   gap: 50px;
 }
 
+.foods-section__title {
+  font-size: 2.5rem;
+}
+
 .new-food_link {
   justify-self: flex-end;
   align-self: end;
@@ -163,4 +176,157 @@
   background: none;
   color: navy;
   cursor: pointer;
+}
+
+/* ### Food Section ### */
+#food-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 15%;
+  gap: 30px;
+}
+
+.food-details_heading {
+  font-size: 2rem;
+}
+
+.food-details_item {
+  border: 2px solid;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 5%;
+  gap: 30px;
+}
+
+.food-details_text {
+  font-size: 1.3rem;
+}
+
+.food-details_button {
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  box-shadow: 5px 5px;
+  padding: 5px;
+  margin-top: 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.food-details_button:hover {
+  background-color: rgb(255, 230, 0);
+}
+
+/* ### Public Recipes ### */
+#public-recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.public-recipe_heading {
+  font-size: 2.5rem;
+}
+
+.public-recipe_item {
+  border: 2px solid;
+  width: 100%;
+  display: flex;
+  padding: 3% 5%;
+  gap: 10%;
+}
+
+.public-recipe_title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 175px;
+  justify-content: center;
+}
+
+.public-recipe_title h3 {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.public-recipe_title h3:hover {
+  color: orange;
+}
+
+.public-recipe_desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  flex-basis: 150px;
+}
+
+/* ### Recipe Details ### */
+#recipe-details_section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.recipe-details_headline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-details_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recipe-details_links {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.recipe-form_input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.recipe-form_input input {
+  width: 60px;
+}
+
+.food-ingredient_button {
+  background-color: white;
+  padding: 5px;
+  font-size: 0.7rem;
+}
+
+/* ### Shopping-list ### */
+#shopping-list_section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.shopping-list_headline {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }

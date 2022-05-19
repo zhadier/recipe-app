@@ -42,6 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_18_192245) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.integer "total_food_items", default: 0
+    t.integer "total_price", default: 0
     t.string "Description"
     t.index ["user_id"], name: "index_receipes_on_user_id"
   end

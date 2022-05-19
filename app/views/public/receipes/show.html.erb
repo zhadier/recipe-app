@@ -20,7 +20,7 @@
           <%= "Public" if @receipe.Public %></strong></p>
     </div>
   </div>
-  <% if @receipe.user_id == current_user.id %>
+  <% if @receipe.user_id == (current_user.id) %>
     <div class="recipe-details_links">
       <%= link_to "Generate Shopping List", receipe_shopping_list_index_path(receipe_id:@receipe.id), method: :get,class:"new-food_link" %>
       <%= form_with(model: FoodIngredient.new, url: receipe_food_ingredient_index_url(receipe_id:@receipe.id), class:"recipe-form") do |f| %>
