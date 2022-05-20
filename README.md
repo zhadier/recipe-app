@@ -12,6 +12,10 @@
 - Rails
 - Postgres
 
+## Live Demo
+
+- https://recipe-app-zhadier.herokuapp.com/
+
 ## Getting Started
 
 ### To launch the project locally:
