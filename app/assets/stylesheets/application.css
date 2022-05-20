@@ -1,0 +1,366 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*
+ *= require font-awesome
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Raleway:wght@100;300;400;500&family=Roboto+Slab:wght@100;300;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+#flash_error {
+  color: red;
+}
+
+#flash_notice {
+  color: green;
+}
+
+#flash_alert {
+  color: yellow;
+}
+
+.devise-form {
+  margin: 7%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  width: 80%;
+}
+
+.field input {
+  width: 100%;
+  height: 30px;
+  border: 3px solid;
+  padding: 2px 5px;
+}
+
+.field input::placeholder {
+  color: black;
+}
+
+.actions {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.devise-button {
+  width: 100%;
+  height: 30px;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px;
+  outline: 1px solid black;
+  background-color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.devise-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field .devise-check {
+  width: auto;
+  padding: 0;
+  height: auto;
+}
+
+/* ### Foods Section ### */
+#foods-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5% 10%;
+  gap: 50px;
+}
+
+.foods-section__title {
+  font-size: 2.5rem;
+}
+
+.new-food_link {
+  justify-self: flex-end;
+  align-self: end;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  box-shadow: 3px 3px;
+  border: 2px solid;
+}
+
+.foods-table {
+  border: 2px solid;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.foods-table_head {
+  background-color: rgb(170, 167, 167);
+}
+
+.foods-table_row:nth-child(even) {
+  background-color: rgb(219, 218, 218);
+}
+
+.food-head_item,
+.food-row_item {
+  text-align: left;
+  border-right: 2px solid;
+  padding: 10px;
+}
+
+.food-row_item h3 {
+  font-weight: 400;
+  display: flex;
+}
+
+.arrow-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.arrow-icons i {
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.food-buttons_container {
+  display: flex;
+  gap: 10px;
+}
+
+.food-buttons {
+  border: none;
+  background: none;
+  color: navy;
+  cursor: pointer;
+}
+
+/* ### Food Section ### */
+#food-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 15%;
+  gap: 30px;
+}
+
+.food-details_heading {
+  font-size: 2rem;
+}
+
+.food-details_item {
+  border: 2px solid;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 5%;
+  gap: 30px;
+}
+
+.food-details_text {
+  font-size: 1.3rem;
+}
+
+.food-details_button {
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  box-shadow: 5px 5px;
+  padding: 5px;
+  margin-top: 15px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.food-details_button:hover {
+  background-color: rgb(255, 230, 0);
+}
+
+/* ### Public Recipes ### */
+#public-recipes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.public-recipe_heading {
+  font-size: 2.5rem;
+}
+
+.public-recipe_item {
+  border: 2px solid;
+  width: 100%;
+  display: flex;
+  padding: 3% 5%;
+  gap: 10%;
+}
+
+.public-recipe_title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-basis: 175px;
+  justify-content: center;
+}
+
+.public-recipe_title h3 {
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.public-recipe_title h3:hover {
+  color: orange;
+}
+
+.public-recipe_desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  flex-basis: 150px;
+}
+
+/* ### Recipe Details ### */
+#recipe-details_section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.recipe-details_headline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.recipe-details_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recipe-details_links {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipe-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.recipe-form_input {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.recipe-form_input input {
+  width: 60px;
+}
+
+.food-ingredient_button {
+  background-color: white;
+  padding: 5px;
+  font-size: 0.7rem;
+}
+
+/* ### Shopping-list ### */
+#shopping-list_section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 5% 15%;
+}
+
+.shopping-list_headline {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+li a {
+  display: block;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: orange;
+  color: white;
+}
+
+.flex-align {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-align button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

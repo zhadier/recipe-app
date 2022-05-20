@@ -1,0 +1,41 @@
+<div id="shopping-list_section">
+  <h1>
+   Shopping List
+  </h1>
+  <div class="shopping-list_headline">
+
+      <p><strong>Amount of food items to buy:
+        </strong>
+        <%= @receipe.total_food_items%>
+      </p>
+      <p><strong>Total value of food needed:
+        </strong>$ 
+        <%= @receipe.total_price %>
+        </p>
+
+  </div>
+
+ <table class="foods-table">
+    <tr class="foods-table_head">
+      <th class="food-head_item"><div class="arrow-head"><h3>Food</h3>
+        <div class="arrow-icons">
+          <i class="fa fa-arrow-up"></i>
+          <i class="fa fa-arrow-down"></i>
+        </div>
+        </div>
+      </th>
+      <th class="food-head_item"><h3>Quantity</h3>
+      </th>
+      <th class="food-head_item"><h3>Price</h3>
+      </th>
+    </tr>
+    <% @receipe_foods.each do |receipe_food| %>
+      <tr class="foods-table_row">
+        <td class="food-row_item"><h3><%= receipe_food.food.name %></h3></td>
+        <td class="food-row_item"><h3><%= receipe_food.Quantity %> <%= receipe_food.food.measurement_unit %></h3></td>
+        <td class="food-row_item"><h3>$
+            <%= receipe_food.food.price * receipe_food.Quantity %></h3></td>
+      </tr>
+    <% end %>
+
+</div>
